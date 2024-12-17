@@ -12,7 +12,7 @@ const FeaturedAnime = ({
     <div className="flex flex-col items-center justify-end w-full">
       <div className="relative w-full">
         <img
-          className="w-full max-h-[75rem] object-cover"
+          className="w-full lg:max-h-[75rem] object-cover"
           src={image}
           alt={`${titleEnglish} cover`}
         />
@@ -45,9 +45,25 @@ const FeaturedAnime = ({
           </div>
         </div>
       </div>
-      <div className="lg:hidden flex flex-col mt-7 px-siteX">
-        <h1 className="text-3xl">{titleEnglish}</h1>
-        <h2 className="text-xl">{titleJapanese}</h2>
+      <div className="lg:hidden flex flex-col items-center mt-7 px-siteX mb-[5rem]">
+        <h1 className="text-3xl text-center">{titleEnglish}</h1>
+        <h2 className="text-xl text-center">{titleJapanese}</h2>
+        <button
+          className="mt-5 py-2 px-8 bg-white rounded-full text-lg text-black"
+          onClick={() => onRecieveData(animeId)}
+        >
+          Read More
+        </button>
+        <div className="flex gap-5 mt-7">
+          {genres.map((genre, index) => (
+            <button
+              className="xl:py-2 xl:px-7 py-1 px-3 border rounded-full text-white"
+              key={index}
+            >
+              {genre.name}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );

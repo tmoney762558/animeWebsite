@@ -8,7 +8,10 @@ export default {
     extend: {
       padding: {
         siteX: "2.5rem",
-      }
+      },
+      fontFamily: {
+        titleFont: "Playwrite IE Guides",
+      },
     },
   },
   plugins: [],

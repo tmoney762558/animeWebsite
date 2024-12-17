@@ -17,6 +17,8 @@ const App = () => {
   const [selectedAnime, setSelectedAnime] = useState(null);
   // Handles the input data from the Navbar input
   const [inputData, setInputData] = useState("");
+  // Handles taking the user back to the previous window when clicking the back button
+  const [previousPage, setPreviousPage] = useState(null);
 
   const handleSetSelectedAnime = (animeId) => {
     setSelectedAnime(animeId);
@@ -82,6 +84,7 @@ const App = () => {
           <TopAnime
             animeData={apiData}
             onRecieveData={handleSetSelectedAnime}
+            setPreviousPage={setPreviousPage}
           ></TopAnime>
         </div>
       ) : null}
@@ -89,10 +92,11 @@ const App = () => {
         <SearchedAnime
           inputData={inputData}
           onRecieveData={handleSetSelectedAnime}
+          setPreviousPage={setPreviousPage}
         ></SearchedAnime>
       ) : null}
       {selectedAnime !== null && selectedAnime !== "searching" ? (
-        <AnimeInformation animeId={selectedAnime}></AnimeInformation>
+        <AnimeInformation animeId={selectedAnime} onRecieveData={handleSetSelectedAnime} previousPage={previousPage}></AnimeInformation>
       ) : null}
     </div>
   );

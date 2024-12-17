@@ -2,8 +2,9 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { AnimeEpisodes } from "../components";
 import { BsStarFill } from "react-icons/bs";
+import { IoChevronBackCircle } from "react-icons/io5";
 
-const AnimeInformation = ({ animeId }) => {
+const AnimeInformation = ({ animeId, onRecieveData, previousPage }) => {
   // Holds data from Jikan API
   const [animeInfo, setAnimeInfo] = useState(null);
   const [episodeInfo, setEpisodeInfo] = useState(null);
@@ -13,7 +14,6 @@ const AnimeInformation = ({ animeId }) => {
 
   // Fetches data from the API with error handling
   const getData = async (url, currentlyLoading) => {
-    console.log("Data Fetched");
     try {
       const res = await fetch(url);
       if (!res.ok) {
@@ -55,8 +55,9 @@ const AnimeInformation = ({ animeId }) => {
 
   return (
     <div
-      className="xl:py-[12rem] py-[4rem] xl:px-siteX px-[1rem]"
+      className="relative xl:py-[12rem] py-[4rem] xl:px-siteX px-[1rem]"
     >
+      <IoChevronBackCircle className="absolute top-5 left-5 cursor-pointer" fontSize={"2.5rem"} onClick={() => {onRecieveData(previousPage)}}></IoChevronBackCircle>
       {animeInfo ? (
         <div className="flex flex-col items-center">
           <div className="flex xl:flex-row flex-col justify-center items-center gap-10 w-full max-w-[75rem]">
