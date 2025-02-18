@@ -8,7 +8,7 @@ const SearchedAnime = ({ onRecieveData, inputData, setPreviousPage }) => {
 
   const getData = async () => {
     try {
-      const res = await fetch(`https://api.jikan.moe/v4/anime?q=${inputData}`);
+      const res = await fetch(`https://api.jikan.moe/v4/anime?sfw=true&q=${inputData}`);
       if (!res.ok) {
         throw new Error(`HTTP error! Status: ${res.status}`);
       }
