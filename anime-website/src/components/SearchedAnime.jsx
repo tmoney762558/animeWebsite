@@ -29,7 +29,7 @@ const SearchedAnime = ({ onRecieveData, inputData, setPreviousPage }) => {
   return (
     <div className="flex justify-center relative">
       <IoChevronBackCircle
-        className="absolute top-5 left-5"
+        className="absolute top-[1rem] right-5"
         fontSize={"2.5rem"}
         onClick={() => {
           onRecieveData(null);
@@ -40,7 +40,7 @@ const SearchedAnime = ({ onRecieveData, inputData, setPreviousPage }) => {
           <p className="text-2xl">No Anime Found</p>
         </div>
       ) : (
-        <div className="grid items-start xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-[5rem] w-full max-w-[125rem] mt-10 px-siteX">
+        <div className="grid items-start xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-[5rem] w-full max-w-[125rem] mt-[7rem] px-siteX">
           {apiData && apiData.length
             ? apiData.map((anime, index) => {
                 if (index === 0) {

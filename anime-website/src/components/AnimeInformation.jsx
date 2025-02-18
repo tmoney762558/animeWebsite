@@ -54,12 +54,16 @@ const AnimeInformation = ({ animeId, onRecieveData, previousPage }) => {
   }
 
   return (
-    <div
-      className="relative xl:py-[12rem] py-[4rem] xl:px-siteX px-[1rem]"
-    >
-      <IoChevronBackCircle className="absolute top-5 left-5 cursor-pointer" fontSize={"2.5rem"} onClick={() => {onRecieveData(previousPage)}}></IoChevronBackCircle>
+    <div className="relative xl:py-[12rem] py-[4rem] xl:px-siteX px-[1rem]">
+      <IoChevronBackCircle
+        className="absolute top-[2rem] right-3 cursor-pointer"
+        fontSize={"2.5rem"}
+        onClick={() => {
+          onRecieveData(previousPage);
+        }}
+      ></IoChevronBackCircle>
       {animeInfo ? (
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center mt-[3rem]">
           <div className="flex xl:flex-row flex-col justify-center items-center gap-10 w-full max-w-[75rem]">
             <img
               className="flex-1 w-full max-w-[20rem] rounded-lg"
