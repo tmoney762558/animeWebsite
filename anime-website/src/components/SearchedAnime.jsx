@@ -1,4 +1,3 @@
-import React from "react";
 import { useState, useEffect, useRef } from "react";
 import { IoChevronBackCircle } from "react-icons/io5";
 
@@ -29,7 +28,7 @@ const SearchedAnime = ({ onRecieveData, inputData, setPreviousPage }) => {
   return (
     <div className="flex justify-center relative">
       <IoChevronBackCircle
-        className="absolute top-[1rem] right-5"
+        className="absolute top-[1rem] right-5 cursor-pointer"
         fontSize={"2.5rem"}
         onClick={() => {
           onRecieveData(null);
